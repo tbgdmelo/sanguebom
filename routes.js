@@ -7,7 +7,9 @@ const mainController = require("./app/controllers/main");
 const router = express.Router();
 
 router.get("/",mainController.index);
+
 router.get("/sobre",mainController.sobre);
+
 router.get("/cadastro",usersController.cadastro);
 
 router.get("/cadastro",usersController.cadastro);
