@@ -5,6 +5,7 @@ const router = require("./routes");
 const app = express();
 const session = require("express-session");
 const cookieParser = require("cookie-parser");
+const db = require("./app/models");
 
 app.engine("handlebars", handlebars({
     helpers: require(`${__dirname}/app/views/helpers`),
@@ -46,8 +47,10 @@ app.use("/js", [
 
 app.use(express.urlencoded({ extended: false }));
 app.use(router);
+const PORT = process.env.PORT || 3000;
 
-app.listen(process.env.PORT || 3000, function(){
-    console.log("express iniciado na porta 3000");
-})
-
+db.sequelize.sync().then(function(){
+    app.listen(PORT, function(){
+        console.log("App iniciado na: " + PORT)
+    });
+});
