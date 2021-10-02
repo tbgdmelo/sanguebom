@@ -1,1 +1,0 @@
-web: npx sequelize db:migrate:all WORKDIR /database/migrations && npx sequelize db:seed:all WORKDIR /database/seeders && nodemon index.js
