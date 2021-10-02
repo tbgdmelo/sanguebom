@@ -32,7 +32,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <span class="required">* <label>CPF:</label></span>
-                            <input value="{{user.cpf}}" name="cpf" onkeypress="$(this).mask('000.000.000-00');" id="cpf"
+                            <input value="{{user.cpf}}" name="cpf" onkeydown="$(this).mask('000.000.000-00');" id="cpf"
                                 type="text" class="form-control" maxlength="11" minlength="11"
                                 placeholder="Não utilize pontos e traços" required>
                             <span class="alert-danger">{{printErrorCPF errors 'cpf'}}</span>
@@ -62,7 +62,7 @@
                         <div class="form-group mt-3">
                             <label>Telefone celular:</label>
                             <input value="{{user.telefone}}" name="telefone"
-                                onkeypress="$(this).mask('(00) 0000-00009')" id="telefone" minlength="15" maxlength="15"
+                                onkeydown="$(this).mask('(00) 0000-00009')" id="telefone" minlength="15" maxlength="15"
                                 type="text" class="form-control">
                         </div>
                     </div>
