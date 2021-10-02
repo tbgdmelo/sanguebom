@@ -47,5 +47,7 @@ app.use("/js", [
 app.use(express.urlencoded({ extended: false }));
 app.use(router);
 
-app.listen(process.env.PORT || 3000)
+app.listen(process.env.PORT || 3000, function(){
+    console.log("express iniciado na porta 3000");
+})
 
