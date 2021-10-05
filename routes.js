@@ -7,9 +7,7 @@ const mainController = require("./app/controllers/main");
 const router = express.Router();
 
 router.get("/",mainController.index);
-
 router.get("/sobre",mainController.sobre);
-
 router.get("/cadastro",usersController.cadastro);
 
 router.get("/cadastro",usersController.cadastro);
@@ -31,5 +29,10 @@ router.get("/notfound", mainController.notfound);
 
 //Páginas que precisam de autenticacao para acessar
 router.get("/perfil/:id", usersController.perfil);
+
+router.get("/centros/index", centrosController.index);
+
+//Rotas do admin
+router.get("/admin/index", adminController.index);
 
 module.exports = router;
